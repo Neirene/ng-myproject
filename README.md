@@ -28,3 +28,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 Is being deployed through Netlify
+
+Important: it's deplyoyed onto the "/dist" folder.....
