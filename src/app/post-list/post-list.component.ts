@@ -21,7 +21,7 @@ export class PostListComponent implements OnInit {
   }
 
 
-  
+  pageEvent;
 
 
   ngOnInit() {
