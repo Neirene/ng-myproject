@@ -1,3 +1,13 @@
-<p>
-  post-view works!
-</p>
+<div fxLayout="row wrap" fxLayoutGap="16px" *ngFor="let post of postPage$ | async">
+    <mat-card fxFlex="calc(100% - 16px)">
+      <mat-card-header>
+        <mat-card-title> {{ post.title.rendered}} </mat-card-title>
+        <mat-card-subtitle>{{ post.date_gmt | date }} by Mary</mat-card-subtitle>
+      </mat-card-header>
+      <img matCardImage [src]="post.jetpack_featured_media_url">
+      <mat-card-content [innerHTML]="post.content.rendered"></mat-card-content>
+      <mat-card-actions align="start">
+        <a mat-button routerLink="/posts/">RETURN</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>

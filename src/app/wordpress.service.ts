@@ -14,15 +14,16 @@ export class WordpressService {
   getPosts(): Observable<any[]> {
     return this.http.get<any[]>('https://public-api.wordpress.com/wp/v2/sites/projectnei.wordpress.com/posts', {
       params: {
-        per_page: '6'
+        per_page: '6',
+        offset: '0'
       }
     });
   }
 
-  getPostPage(): Observable<any[]> {
-    return this.http.get<any[]>('https://public-api.wordpress.com/wp/v2/sites/projectnei.wordpress.com/posts/?slug="what-happened"', {
+  getPostPage(postSlug): Observable<any[]> {
+    return this.http.get<any[]>('https://public-api.wordpress.com/wp/v2/sites/projectnei.wordpress.com/posts', {
       params: {
-        per_page: '6'
+        slug: postSlug.value.slug
       }
     });
   }

@@ -4,10 +4,16 @@
       <mat-card-title>{{ post.title.rendered }}</mat-card-title>
       <mat-card-subtitle>{{ post.date_gmt | date }}</mat-card-subtitle>
     </mat-card-header>
-    <img matCardImage [src]="jetpack_featured_media_url">
+    <img matCardImage [src]="post.jetpack_featured_media_url">
     <mat-card-content [innerHTML]="post.excerpt.rendered"></mat-card-content>
     <mat-card-actions align="start">
-      <a mat-button [href]="post.link">View</a>
+      <a mat-button routerLink="/posts/{{post.slug}}">View</a>
     </mat-card-actions>
   </mat-card>
 </div>
+
+<mat-paginator [length]="pagination"
+              [pageSize]="2"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="pageEvent = $event">
+</mat-paginator>

@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import {RouterModule, Routes} from '@angular/router';
 
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule,MatCardModule,MatDividerModule,MatGridListModule,MatTabsModule,MatToolbarModule,MatMenuModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule,MatCardModule,MatDividerModule,MatGridListModule,MatTabsModule,MatToolbarModule,MatMenuModule,MatPaginatorModule} from '@angular/material';
 
 
 
@@ -17,6 +18,30 @@ import { MenuComponent } from './menu/menu.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostViewComponent } from './post-view/post-view.component';
 import { AboutPageComponent } from './about-page/about-page.component';
+
+
+
+
+
+
+//routes goes here....
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'posts',
+    pathMatch: 'full'
+  },
+  {
+    path: 'posts',
+    component: PostListComponent
+  },
+  {
+    path: 'posts/:slug',
+    component: PostViewComponent
+  }
+];
+
 
 @NgModule({
   declarations: [
@@ -31,7 +56,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
     AboutPageComponent
   ],
   imports: [
-    BrowserModule,FlexLayoutModule,BrowserAnimationsModule,HttpClientModule,MatButtonModule,MatCheckboxModule,MatCardModule,MatDividerModule,MatGridListModule,MatTabsModule,MatToolbarModule,MatMenuModule
+    BrowserModule,RouterModule.forRoot(routes),FlexLayoutModule,BrowserAnimationsModule,HttpClientModule,MatButtonModule,MatCheckboxModule,MatCardModule,MatDividerModule,MatGridListModule,MatTabsModule,MatToolbarModule,MatMenuModule,MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

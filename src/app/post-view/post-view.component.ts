@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import {ActivatedRoute} from "@angular/router";
 import { WordpressService } from '../wordpress.service';
 
 
@@ -12,14 +13,24 @@ import { WordpressService } from '../wordpress.service';
 })
 export class PostViewComponent implements OnInit {
 
+  //TODO: Find a way to save the friggin data into a variable dammit.... 
 
-  postSlug$: Observable<any[]>;
+ postPage$: Observable<any[]>;
 
-  constructor(private wp: WordpressService) {
-    this.postSlug$ = this.wp.getPostPage();
+  constructor(private wp: WordpressService, private route: ActivatedRoute) {
+    
+    this.route.params.subscribe( params =>  console.log(params) );
   }
 
   ngOnInit() {
+    this.fetchPage();
   }
+
+
+  fetchPage() {
+    this.postPage$ = this.wp.getPostPage(this.route.params)
+  }
+
+
 
 }
