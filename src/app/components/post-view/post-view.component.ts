@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import {ActivatedRoute} from "@angular/router";
-import { WordpressService } from '../wordpress.service';
+import { WordpressService } from '../../services/wordpress/wordpress.service';
 
 
 
