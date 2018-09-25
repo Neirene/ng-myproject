@@ -21,6 +21,7 @@ import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { LobbyPageComponent } from './pages/lobby-page/lobby-page.component';
 import { SplashPageComponent } from './pages/splash-page/splash-page.component';
 import { WorksPageComponent } from './pages/works-page/works-page.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 
 
@@ -37,10 +38,12 @@ const routes: Routes = [
   },
   {path: 'posts', component: BlogPageComponent, children: [
     {path: '', component: PostListComponent},
-    {path: ':slug', component: PostViewComponent}
+    {path: ':slug', component: PostViewComponent},
   ]},
   {path: 'about', component: AboutPageComponent},
   {path: 'works', component: WorksPageComponent},
+  {path: '404', component: ErrorPageComponent},
+  {path: '**', redirectTo: '/404'}
 ];
 
 
@@ -58,7 +61,8 @@ const routes: Routes = [
     ContentsComponent,
     BlogPageComponent,
     LobbyPageComponent,
-    WorksPageComponent
+    WorksPageComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(routes),FlexLayoutModule,BrowserAnimationsModule,HttpClientModule,MatButtonModule,MatCheckboxModule,MatCardModule,MatDividerModule,MatGridListModule,MatTabsModule,MatToolbarModule,MatMenuModule,MatPaginatorModule,MatSidenavModule
