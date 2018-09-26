@@ -25,6 +25,7 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // that you are using.
 @include angular-material-theme($candy-app-theme);
 
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:900');
 
 //alligator.io css resets
 
@@ -52,3 +53,4 @@ html {
     max-width: 100%;
     height: auto;
   }
+

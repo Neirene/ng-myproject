@@ -7,7 +7,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule,MatCardModule,MatDividerModule,MatGridListModule,MatTabsModule,MatToolbarModule,MatMenuModule,MatPaginatorModule,MatSidenavModule} from '@angular/material';
 
-
 import { AppComponent } from './app.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { HeaderComponent } from './layout/header/header.component';
