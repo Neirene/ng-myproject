@@ -41,6 +41,7 @@ const routes: Routes = [
   ]},
   {path: 'about', component: AboutPageComponent},
   {path: 'works', component: WorksPageComponent},
+  {path: 'lobby', component: LobbyPageComponent},
   {path: '404', component: ErrorPageComponent},
   {path: '**', redirectTo: '/404'}
 ];

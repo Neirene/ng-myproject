@@ -25,32 +25,27 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // that you are using.
 @include angular-material-theme($candy-app-theme);
 
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:900');
+//sakura.css (INCLUDES RESET/NORMALIZER i think...)
+//sakura variables  (affects all the default text pages)
+$color-blossom: #2c8898;
+$color-fade: #982c61;
 
-//alligator.io css resets
+$color-bg: #f9f9f9;
+$color-bg-alt: #f1f1f1;
+
+$color-text: #4a4a4a;
+$font-size-base: 1.8rem;
+
+//sakura main file import (baseline styles for text)
+@import 'node_modules/sakura.css/scss/main.scss';
 
 
-html {
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-  }
-  
-  ol, ul {
-    list-style: none;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+//fonts preloading goes here
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,900');
 
+
+body {
+    max-width:1920px!important;
+    margin:0px;
+    padding:0px;
+}
