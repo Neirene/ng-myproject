@@ -8,7 +8,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule,MatCardModule,MatDividerModule,MatGridListModule,MatTabsModule,MatToolbarModule,MatMenuModule,MatPaginatorModule,MatSidenavModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { BackgroundComponent } from './components/background/background.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { MenuComponent } from './layout/menu/menu.component';
@@ -51,7 +50,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     SplashPageComponent,
-    BackgroundComponent,
     HeaderComponent,
     FooterComponent,
     MenuComponent,
